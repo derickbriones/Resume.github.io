@@ -79,9 +79,13 @@ span {
 }
 
 .navlist a {
+  display: inline-block;
   color: var(--text-color);
   font-weight: 500;
   padding: 10px 20px;
+  animation: slideAnimation 1s ease forwards;
+  animation-delay: calc(0.3s * var(--i));
+  opacity: 0;
 }
 
 .navlist a:hover {
@@ -612,7 +616,7 @@ a.btn:nth-child(2):hover {
   text-align: center;
 }
 
-.fillter-buttons .btn {
+.fillter-buttons .button {
   background: none;
   outline: none;
   border: none;
@@ -624,7 +628,7 @@ a.btn:nth-child(2):hover {
   color: var(--text-color);
 }
 
-.fillter-buttons .btn:hover {
+.fillter-buttons .button:hover {
   color: var(--hover-color);
 }
 
@@ -774,9 +778,33 @@ footer a {
   border-radius: 5px;
 }
 
-footer a {
+footer a i {
   font-size: 1rem;
   color: var(--secon-bg-color);
+}
+
+/* parallax */
+.scroll-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 2s;
+}
+
+.scroll-bottom {
+  opacity: 0;
+  transform: translateY(300px);
+  transition: 3s;
+}
+
+.scroll-top {
+  opacity: 0;
+  transform: translateY(-300px);
+  transition: 3s;
+}
+
+.show-items {
+  opacity: 1;
+  transform: translateX(0);
 }
 /* keyframes */
 @keyframes morph {
@@ -842,6 +870,16 @@ footer a {
   }
 }
 
+@keyframes slideAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* Break Points */
 @media (max-width: 991px) {
   header,
@@ -904,5 +942,46 @@ footer a {
   }
   .home-image {
     margin-bottom: 5rem;
+  }
+  .liquid-shape {
+    width: 80%;
+    left: 10%;
+    top: 13%;
+  }
+  .about {
+    flex-direction: column-reverse;
+  }
+  .skill-main {
+    grid-template-columns: 1fr;
+  }
+
+  .fillter-buttons {
+    margin: 2.5rem 0;
+  }
+  footer p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 420px) {
+  html {
+    font-size: 80%;
+  }
+  footer p {
+    font-size: 0.6rem;
+  }
+  .fillter-buttons .button {
+    font-size: 0.8rem;
+  }
+  .img-about img {
+    width: 300px;
+  }
+  .info-about,
+  info-about2,
+  info-about3 {
+    display: none;
+  }
+  .img-about p {
+    font-size: 1rem;
   }
 }
