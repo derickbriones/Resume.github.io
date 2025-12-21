@@ -535,22 +535,22 @@ a.btn:nth-child(2):hover {
   box-shadow: var(--neon-box-shadow);
 }
 
-.skill-bar .bar .cplusplus {
-  width: 85%;
-  animation: cplusplus 2s;
-}
-
-.skill-bar .bar .python {
-  width: 80%;
-  animation: python 3s;
-}
-
 .skill-bar .bar .figma {
-  width: 90%;
-  animation: figma 4s;
+  width: 85%;
+  animation: figma 2s;
 }
 
-.skill-bar .bar .php {
+.skill-bar .bar .cp {
+  width: 80%;
+  animation: cp 3s;
+}
+
+.skill-bar .bar .fend {
+  width: 80%;
+  animation: fend 4s;
+}
+
+.skill-bar .bar .bend {
   width: 80%;
   animation: php 4s;
 }
